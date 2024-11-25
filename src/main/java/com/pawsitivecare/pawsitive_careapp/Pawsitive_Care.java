@@ -30,7 +30,7 @@ public class Pawsitive_Care extends JFrame {
         // Add description label (Centered below title)
         JLabel descriptionLabel = new JLabel("Your one-stop destination for pet care services.", SwingConstants.CENTER);
         descriptionLabel.setFont(new Font("Papyrus", Font.ITALIC, 20));
-        descriptionLabel.setForeground(new Color(255, 255, 255, 150));  // Black color for text
+        descriptionLabel.setForeground(new Color(255, 255, 255, 150));  // White color for text
         descriptionLabel.setOpaque(true);  // Make the label opaque to show background color
         descriptionLabel.setBackground(new Color(255, 255, 255, 150)); // Semi-transparent white background
         descriptionLabel.setPreferredSize(new Dimension(800, 60));
@@ -48,7 +48,7 @@ public class Pawsitive_Care extends JFrame {
         JButton signupButton = new JButton("Sign Up");
 
         // Button styling
-        Font buttonFont = new Font("Papyrus", Font.PLAIN, 18);
+        Font buttonFont = new Font("Papyrus", Font.PLAIN, 24); // Increased font size for better readability
         Color buttonColor = new Color(0, 0, 0); // Black color for buttons
         Color textColor = new Color(255, 255, 255, 150); // White text
 
@@ -59,6 +59,10 @@ public class Pawsitive_Care extends JFrame {
         signupButton.setBackground(buttonColor);
         loginButton.setForeground(textColor);
         signupButton.setForeground(textColor);
+
+        // Set preferred size for buttons (making them bigger)
+        loginButton.setPreferredSize(new Dimension(200, 50));
+        signupButton.setPreferredSize(new Dimension(200, 50));
 
         // Add login button to center of panel
         gbc.gridx = 0;
@@ -126,10 +130,9 @@ public class Pawsitive_Care extends JFrame {
             our_services.main(new String[]{}); // Open the "Our Services" page
         });
 
-
         // Action listener for contact us button
         contactButton.addActionListener(e -> {
-            contact_us.main(new String[]{}); // Open the "Our Services" page
+            contact_us.main(new String[]{}); // Open the "Contact Us" page
         });
     }
 
