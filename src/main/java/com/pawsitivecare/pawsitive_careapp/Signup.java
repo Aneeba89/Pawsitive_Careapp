@@ -4,10 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 class Signup extends JFrame {
     private JPanel contentPane;
@@ -89,11 +85,6 @@ class Signup extends JFrame {
         signupButton.setBounds(300, 470, 100, 30);  // Positioned below the email field
         contentPane.add(signupButton);
 
-        // Signup button action listener
-
-
-
-
         // Reset button
         JButton resetButton = new JButton("Reset");
         resetButton.setFont(new Font("Papyrus", Font.PLAIN, 14));
@@ -108,9 +99,25 @@ class Signup extends JFrame {
                 usernameField.setText(null);
                 passwordField.setText(null);
                 emailField.setText(null);
+            }
+        });
 
+        // Add Back button
+        JButton backButton = new JButton("Back");
+        backButton.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        backButton.setForeground(Color.WHITE);
+        backButton.setBackground(new Color(0,0,0));
+        backButton.setBounds(400, 600, 100, 30);  // Positioned below the Reset button
+        contentPane.add(backButton);
+
+        // Back button action listener
+        backButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                dispose(); // Close the current signup page
+                // Navigate to the previous page (you can instantiate a new login page or frame here)
+                // Example:
+                // new LoginPage().setVisible(true); // Add your navigation logic
             }
         });
     }
 }
-

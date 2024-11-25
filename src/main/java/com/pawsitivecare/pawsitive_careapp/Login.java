@@ -4,14 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.*;
 
 class Login extends JFrame {
     private JPanel contentPane;
     private JTextField textField;
     private JPasswordField passwordField;
     private Image backgroundImage;
-
 
     public Login() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,8 +24,6 @@ class Login extends JFrame {
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
-
-
             }
         };
 
@@ -75,9 +71,6 @@ class Login extends JFrame {
         btnNewButton.setBounds(300, 400, 100, 30);  // Positioned below the password field
         contentPane.add(btnNewButton);
 
-        // Login button action listener
-
-
         // Reset button
         JButton btnNewButton_1 = new JButton("Reset");
         btnNewButton_1.setFont(new Font("Papyrus", Font.PLAIN, 14));
@@ -93,6 +86,25 @@ class Login extends JFrame {
                 passwordField.setText(null);
             }
         });
+
+        // Back button
+        JButton backButton = new JButton("Back");
+        backButton.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        backButton.setForeground(Color.WHITE);
+        backButton.setBackground(new Color(0,0,0));
+        backButton.setBounds(400, 600, 100, 30);  // Positioned below the login button
+        contentPane.add(backButton);
+
+        // Back button action listener
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose(); // Close the current frame
+                // Open the previous frame (e.g., Welcome Page)
+                Pawsitive_Care welcomePage = new Pawsitive_Care(); // Create an instance of Pawsitive_Care
+                welcomePage.display(); // Custom method to make the welcome page visible
+
+            }
+        });
     }
 }
-

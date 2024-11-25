@@ -5,13 +5,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Pawsitive_Care {
-    public static void main(String[] args) {
-        // Create a frame
-        JFrame frame = new JFrame("Welcome to PawsitiveCare!");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 600);
-        frame.setLocationRelativeTo(null); // Center the frame
+public class Pawsitive_Care extends JFrame {
+
+    public Pawsitive_Care() {
+        setTitle("Welcome to PawsitiveCare!");
+        setSize(800, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null); // Center the frame
 
         // Set background image
         ImageIcon backgroundImage = new ImageIcon("C:\\Users\\IDEAL\\OneDrive\\Desktop\\img_paws.jpg");
@@ -36,12 +36,12 @@ public class Pawsitive_Care {
         descriptionLabel.setPreferredSize(new Dimension(800, 60));
         backgroundLabel.add(descriptionLabel, BorderLayout.CENTER);
 
-        // Create a panel to hold buttons
+        // Create a panel to hold buttons (Login and Sign Up)
         JPanel buttonPanel = new JPanel();
         buttonPanel.setOpaque(false); // Make the panel transparent
         buttonPanel.setLayout(new GridBagLayout()); // Use GridBagLayout to center the buttons
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10); // Add padding around the buttons
+        gbc.insets = new Insets(20, 100, 20, 100); // Add padding around the buttons
 
         // Create buttons for Login and Sign Up
         JButton loginButton = new JButton("Login");
@@ -64,22 +64,7 @@ public class Pawsitive_Care {
         gbc.gridx = 0;
         gbc.gridy = 0;
         buttonPanel.add(loginButton, gbc);
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Login loginFrame = new Login();
-                loginFrame.setVisible(true);
-                //setVisible(false);
-            }
-        });
-        signupButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Signup signup = new Signup();
-                signup.setVisible(true);
-                //setVisible(false);
-            }
-        });
+
         // Add signup button to center of panel, below login button
         gbc.gridx = 0;
         gbc.gridy = 1;
@@ -111,16 +96,18 @@ public class Pawsitive_Care {
         backgroundLabel.add(otherButtonsPanel, BorderLayout.SOUTH);  // Put other buttons at the bottom
 
         // Set the content pane of the frame
-        frame.setContentPane(backgroundLabel);
+        setContentPane(backgroundLabel);
 
         // Set frame visibility
-        frame.setVisible(true);
+        setVisible(true);
 
         // Action listener for login button
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                Login loginFrame = new Login();
+                loginFrame.setVisible(true);
+                //setVisible(false); // Hide welcome page if needed
             }
         });
 
@@ -128,26 +115,30 @@ public class Pawsitive_Care {
         signupButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                Signup signup = new Signup();
+                signup.setVisible(true);
+                //setVisible(false);
             }
         });
 
         // Action listener for services button
-        servicesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "Our Services button clicked!");
-            }
+        servicesButton.addActionListener(e -> {
+            our_services.main(new String[]{}); // Open the "Our Services" page
         });
+
 
         // Action listener for contact us button
-        contactButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "Contact Us button clicked!");
-            }
+        contactButton.addActionListener(e -> {
+            contact_us.main(new String[]{}); // Open the "Our Services" page
         });
     }
+
+    public void display() {
+        setVisible(true); // Display the Welcome page
+    }
+
+    public static void main(String[] args) {
+        Pawsitive_Care welcomePage = new Pawsitive_Care();
+        welcomePage.display();
+    }
 }
-
-
