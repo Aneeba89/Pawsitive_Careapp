@@ -48,14 +48,14 @@ public class emergency_RC extends JFrame
         // Submit button
         JButton submitButton = new JButton("Submit");
         submitButton.setFont(new Font("Papyrus", Font.PLAIN, 22));
-        submitButton.setBackground(new Color(191, 128, 64));
+        submitButton.setBackground(new Color(220, 20, 60));
         submitButton.setForeground(Color.WHITE);
         submitButton.setPreferredSize(new Dimension(200, 60));  // Increased size
 
         // Back button
         JButton backButton = new JButton("Back");
         backButton.setFont(new Font("Papyrus", Font.PLAIN, 22));
-        backButton.setBackground(new Color(191, 128, 64));
+        backButton.setBackground(new Color(0,0,0));
         backButton.setForeground(Color.WHITE);
         backButton.setPreferredSize(new Dimension(200, 60));  // Increased size
 
@@ -66,7 +66,7 @@ public class emergency_RC extends JFrame
         buttonPanel.setAlignmentX(Component.CENTER_ALIGNMENT); // Align the panel itself in the center
 
         buttonPanel.add(submitButton);
-        buttonPanel.add(Box.createRigidArea(new Dimension(140, 20))); // Space between the buttons
+        buttonPanel.add(Box.createRigidArea(new Dimension(150, 20))); // Space between the buttons
         buttonPanel.add(backButton);
 
         // Panel for centering the button panel vertically and horizontally

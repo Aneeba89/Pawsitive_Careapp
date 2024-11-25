@@ -2,7 +2,6 @@ package com.pawsitivecare.pawsitive_careapp;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 
 public class pet_articles extends JFrame {
 
@@ -102,8 +101,17 @@ public class pet_articles extends JFrame {
             articleButton.setForeground(new Color(0, 102, 204));
             articleButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-            // Add action listener to open article window
-            articleButton.addActionListener(e -> openArticle(categoryName, article));
+            // Add action listener to open the specific article
+            articleButton.addActionListener(e -> {
+                if (article.equals("Dog Training Basics")) {
+                    // Open the DogTrainingBasics page for this specific article
+                    training_basics_article dogTrainingPage = new training_basics_article();
+                    dogTrainingPage.setVisible(true);
+                } else {
+                    // Open a generic article page for all other articles
+                    openArticle(categoryName, article);
+                }
+            });
 
             linksPanel.add(articleButton);
         }
