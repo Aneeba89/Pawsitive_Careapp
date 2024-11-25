@@ -56,7 +56,11 @@ public class our_services {
 
         // Add action listeners for each button
         healthRecordButton.addActionListener(e -> JOptionPane.showMessageDialog(frame, "Navigate to Pet Health Record Tracker Page"));
-        careTipsButton.addActionListener(e -> JOptionPane.showMessageDialog(frame, "Navigate to Pet Care Tips & Articles Page"));
+
+        careTipsButton.addActionListener(e -> {
+            pet_articles.main(new String[]{}); // Open the "pet articles " page
+        });
+
         emergencyContactsButton.addActionListener(e -> {
             emergency_RC.main(new String[]{}); // Open the "Emergency Rescue Contacts" page
         });

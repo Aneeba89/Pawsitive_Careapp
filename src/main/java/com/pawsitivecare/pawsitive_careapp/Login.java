@@ -69,6 +69,8 @@ class Login extends JFrame {
         btnNewButton.setForeground(Color.WHITE);
         btnNewButton.setBackground(new Color(0, 100, 200));
         btnNewButton.setBounds(300, 400, 100, 30);  // Positioned below the password field
+        btnNewButton.setFocusable(false);
+
         contentPane.add(btnNewButton);
 
         // Reset button
@@ -77,6 +79,7 @@ class Login extends JFrame {
         btnNewButton_1.setForeground(Color.WHITE);
         btnNewButton_1.setBackground(new Color(220, 20, 60));
         btnNewButton_1.setBounds(500, 400, 100, 30);  // Positioned next to the login button
+        btnNewButton_1.setFocusable(false);
         contentPane.add(btnNewButton_1);
 
         // Reset button action listener

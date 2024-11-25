@@ -5,7 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class emergency_RC extends JFrame {
+public class emergency_RC extends JFrame
+{
 
     private JComboBox<String> cityComboBox;
 
