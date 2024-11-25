@@ -9,7 +9,7 @@ public class Pawsitive_Care extends JFrame {
 
     public Pawsitive_Care() {
         setTitle("Welcome to PawsitiveCare!");
-        setSize(800, 600);
+        setSize(900, 800);  // Set the size to 900x800
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); // Center the frame
 
@@ -21,10 +21,10 @@ public class Pawsitive_Care extends JFrame {
         // Add title label (Centered at the top)
         JLabel titleLabel = new JLabel("Welcome to PawsitiveCare!", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Papyrus", Font.BOLD, 36));
-        titleLabel.setForeground(new Color(191, 128, 64));  // Black color for text
+        titleLabel.setForeground(new Color(191, 128, 64));  // Adjusted text color
         titleLabel.setOpaque(true);
         titleLabel.setBackground(new Color(255, 255, 255, 150)); // Semi-transparent white background
-        titleLabel.setPreferredSize(new Dimension(800, 100));
+        titleLabel.setPreferredSize(new Dimension(900, 100));  // Adjusted width to 900
         backgroundLabel.add(titleLabel, BorderLayout.NORTH);
 
         // Add description label (Centered below title)
@@ -33,7 +33,7 @@ public class Pawsitive_Care extends JFrame {
         descriptionLabel.setForeground(new Color(255, 255, 255, 150));  // White color for text
         descriptionLabel.setOpaque(true);  // Make the label opaque to show background color
         descriptionLabel.setBackground(new Color(255, 255, 255, 150)); // Semi-transparent white background
-        descriptionLabel.setPreferredSize(new Dimension(800, 60));
+        descriptionLabel.setPreferredSize(new Dimension(900, 60));  // Adjusted width to 900
         backgroundLabel.add(descriptionLabel, BorderLayout.CENTER);
 
         // Create a panel to hold buttons (Login and Sign Up)
@@ -59,6 +59,8 @@ public class Pawsitive_Care extends JFrame {
         signupButton.setBackground(buttonColor);
         loginButton.setForeground(textColor);
         signupButton.setForeground(textColor);
+         signupButton.setFocusable(false);
+        loginButton.setFocusable(false);
 
         // Set preferred size for buttons (making them bigger)
         loginButton.setPreferredSize(new Dimension(200, 50));
@@ -90,6 +92,13 @@ public class Pawsitive_Care extends JFrame {
         contactButton.setBackground(buttonColor);
         servicesButton.setForeground(textColor);
         contactButton.setForeground(textColor);
+        servicesButton.setFocusable(false);
+        contactButton.setFocusable(false);
+
+
+
+
+
 
         // Add buttons to the other panel
         otherButtonsPanel.add(servicesButton);

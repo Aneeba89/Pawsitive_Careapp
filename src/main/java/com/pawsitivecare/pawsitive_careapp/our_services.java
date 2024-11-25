@@ -7,10 +7,10 @@ import java.awt.event.ActionListener;
 
 public class our_services {
     public static void main(String[] args) {
-        // Create the frame
+        // Create the frame with the same size as the Login page (900x800)
         JFrame frame = new JFrame("Our Services - Pawsitive Care");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 600);
+        frame.setSize(900, 800);  // Set the size to 900x800
         frame.setLocationRelativeTo(null); // Center the frame
 
         // Set background color
@@ -37,7 +37,7 @@ public class our_services {
         JButton symptomCheckerButton = new JButton("Symptom Checker");
 
         // Button styles
-        Font buttonFont = new Font("Papyrus", Font.PLAIN, 18);
+        Font buttonFont = new Font("Papyrus", Font.PLAIN, 26);
         Color buttonColor = new Color(172, 115, 57); // Orange color for buttons
         Color textColor = Color.WHITE;
 
@@ -58,7 +58,7 @@ public class our_services {
         healthRecordButton.addActionListener(e -> JOptionPane.showMessageDialog(frame, "Navigate to Pet Health Record Tracker Page"));
         careTipsButton.addActionListener(e -> JOptionPane.showMessageDialog(frame, "Navigate to Pet Care Tips & Articles Page"));
         emergencyContactsButton.addActionListener(e -> {
-            emergency_RC.main(new String[]{}); // Open the "Contact Us" page
+            emergency_RC.main(new String[]{}); // Open the "Emergency Rescue Contacts" page
         });
         symptomCheckerButton.addActionListener(e -> JOptionPane.showMessageDialog(frame, "Navigate to Symptom Checker Page"));
 
