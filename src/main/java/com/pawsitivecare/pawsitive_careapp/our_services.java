@@ -37,7 +37,7 @@ public class our_services {
         JButton symptomCheckerButton = new JButton("Symptom Checker");
 
         // Button styles
-        Font buttonFont = new Font("Papyrus", Font.PLAIN, 26);
+        Font buttonFont = new Font("Papyrus", Font.BOLD, 26);
         Color buttonColor = new Color(172, 115, 57); // Orange color for buttons
         Color textColor = Color.WHITE;
 

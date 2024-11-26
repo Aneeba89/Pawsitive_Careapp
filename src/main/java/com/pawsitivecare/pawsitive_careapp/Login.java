@@ -65,7 +65,7 @@ class Login extends JFrame {
 
         // Login button
         JButton btnNewButton = new JButton("Login");
-        btnNewButton.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        btnNewButton.setFont(new Font("Papyrus", Font.BOLD, 14));
         btnNewButton.setForeground(Color.WHITE);
         btnNewButton.setBackground(new Color(0, 100, 200));
         btnNewButton.setBounds(300, 400, 100, 30);  // Positioned below the password field
@@ -75,7 +75,7 @@ class Login extends JFrame {
 
         // Reset button
         JButton btnNewButton_1 = new JButton("Reset");
-        btnNewButton_1.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        btnNewButton_1.setFont(new Font("Papyrus", Font.BOLD, 14));
         btnNewButton_1.setForeground(Color.WHITE);
         btnNewButton_1.setBackground(new Color(220, 20, 60));
         btnNewButton_1.setBounds(500, 400, 100, 30);  // Positioned next to the login button
@@ -92,7 +92,7 @@ class Login extends JFrame {
 
         // Back button
         JButton backButton = new JButton("Back");
-        backButton.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        backButton.setFont(new Font("Papyrus", Font.BOLD, 14));
         backButton.setForeground(Color.WHITE);
         backButton.setBackground(new Color(0,0,0));
         backButton.setBounds(400, 600, 100, 30);  // Positioned below the login button

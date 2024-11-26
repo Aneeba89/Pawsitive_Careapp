@@ -79,7 +79,7 @@ class Signup extends JFrame {
 
         // Signup button
         JButton signupButton = new JButton("Signup");
-        signupButton.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        signupButton.setFont(new Font("Papyrus", Font.BOLD, 14));
         signupButton.setForeground(Color.WHITE);
         signupButton.setBackground(new Color(0, 100, 200));
         signupButton.setBounds(300, 470, 100, 30);  // Positioned below the email field
@@ -87,7 +87,7 @@ class Signup extends JFrame {
 
         // Reset button
         JButton resetButton = new JButton("Reset");
-        resetButton.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        resetButton.setFont(new Font("Papyrus", Font.BOLD, 14));
         resetButton.setForeground(Color.WHITE);
         resetButton.setBackground(new Color(220, 20, 60));
         resetButton.setBounds(500, 470, 100, 30);  // Positioned next to the signup button
@@ -104,7 +104,7 @@ class Signup extends JFrame {
 
         // Add Back button
         JButton backButton = new JButton("Back");
-        backButton.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        backButton.setFont(new Font("Papyrus", Font.BOLD, 14));
         backButton.setForeground(Color.WHITE);
         backButton.setBackground(new Color(0,0,0));
         backButton.setBounds(400, 600, 100, 30);  // Positioned below the Reset button

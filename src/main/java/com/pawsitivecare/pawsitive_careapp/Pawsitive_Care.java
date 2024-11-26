@@ -48,7 +48,7 @@ public class Pawsitive_Care extends JFrame {
         JButton signupButton = new JButton("Sign Up");
 
         // Button styling
-        Font buttonFont = new Font("Papyrus", Font.PLAIN, 24); // Increased font size for better readability
+        Font buttonFont = new Font("Papyrus", Font.BOLD, 26); // Increased font size for better readability
         Color buttonColor = new Color(0, 0, 0); // Black color for buttons
         Color textColor = new Color(255, 255, 255, 150); // White text
 

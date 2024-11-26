@@ -44,7 +44,7 @@ public class contact_us extends JFrame {
 
         // Contact info section
         JLabel contactLabel = new JLabel("<html><b>Phone:</b> +1 800 123 4567<br><b>Email:</b> support@pawsitivecare.com<br><b>Address:</b> 123 Pet Care Lane, Happy City, 12345</html>");
-        contactLabel.setFont(new Font("Papyrus", Font.PLAIN, 18));
+        contactLabel.setFont(new Font("Papyrus", Font.BOLD, 18));
         contactLabel.setForeground(new Color(172, 115, 57));
         contactLabel.setBounds(50, 180, 800, 120);
         contentPane.add(contactLabel);
@@ -67,7 +67,7 @@ public class contact_us extends JFrame {
 
         // Submit button
         JButton submitButton = new JButton("Submit");
-        submitButton.setFont(new Font("Papyrus", Font.PLAIN, 18));
+        submitButton.setFont(new Font("Papyrus", Font.BOLD, 18));
         submitButton.setForeground(Color.WHITE);
         submitButton.setBackground(new Color(220, 20, 60));
         submitButton.setBounds(350, 530, 200, 40);
@@ -89,7 +89,7 @@ public class contact_us extends JFrame {
 
         // Back button
         JButton backButton = new JButton("Back");
-        backButton.setFont(new Font("Papyrus", Font.PLAIN, 14));
+        backButton.setFont(new Font("Papyrus", Font.BOLD, 14));
         backButton.setForeground(Color.WHITE);
         backButton.setBackground(new Color(0,0,0));
         backButton.setBounds(350, 600, 200, 40);

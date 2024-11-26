@@ -2,8 +2,13 @@ package com.pawsitivecare.pawsitive_careapp;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class pet_articles extends JFrame {
+
+    // Map to keep track of open article windows
+    private final Map<String, JFrame> openArticles = new HashMap<>();
 
     public pet_articles() {
         setTitle("Pet Care Articles");
@@ -91,10 +96,9 @@ public class pet_articles extends JFrame {
         // Add articles as clickable links
         JPanel linksPanel = new JPanel();
         linksPanel.setLayout(new BoxLayout(linksPanel, BoxLayout.Y_AXIS));
-
         for (String article : articles) {
             JButton articleButton = new JButton(article);
-            articleButton.setFont(new Font("Arial", Font.PLAIN, 14));
+            articleButton.setFont(new Font("Arial", Font.BOLD, 14));
             articleButton.setHorizontalAlignment(SwingConstants.LEFT);
             articleButton.setBorderPainted(false);
             articleButton.setBackground(Color.WHITE);
@@ -102,37 +106,63 @@ public class pet_articles extends JFrame {
             articleButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
             // Add action listener to open the specific article
+            articleButton.addActionListener(e -> openArticle(categoryName, article));
+
             articleButton.addActionListener(e -> {
                 if (article.equals("Dog Training Basics")) {
                     // Open the DogTrainingBasics page for this specific article
                     training_basics_article dogTrainingPage = new training_basics_article();
                     dogTrainingPage.setVisible(true);
-                } else {
-                    // Open a generic article page for all other articles
-                    openArticle(categoryName, article);
                 }
             });
 
-            linksPanel.add(articleButton);
+            articleButton.addActionListener(e -> {
+                if (article.equals("Understanding Dog Behavior")) {
+                    // Open the DogTrainingBasics page for this specific article
+                    dog_behaviour_article dog_behavePage = new dog_behaviour_article();
+                    dog_behavePage.setVisible(true);
+                }
+            });
+
+            linksPanel.add(articleButton); // This should be outside the listeners
         }
+
 
         categoryPanel.add(linksPanel, BorderLayout.CENTER);
         panel.add(categoryPanel);
     }
 
     private void openArticle(String category, String articleTitle) {
-        // Create a separate window to display article content
+        // Check if the article window is already open
+        if (openArticles.containsKey(articleTitle)) {
+            JFrame openFrame = openArticles.get(articleTitle);
+            if (openFrame != null) {
+                openFrame.toFront(); // Bring the already open window to the front
+                openFrame.requestFocus();
+                return;
+            }
+        }
+
+        // Create a new article window
         JFrame articleFrame = new JFrame(articleTitle);
         articleFrame.setSize(600, 400);
         articleFrame.setLocationRelativeTo(null);
         articleFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        // Remove the reference from the map when the window is closed
+        articleFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent e) {
+                openArticles.remove(articleTitle);
+            }
+        });
 
         JTextArea articleContent = new JTextArea(
                 "Category: " + category + "\n\n" +
                         "Article Title: " + articleTitle + "\n\n" +
                         "Content for this article will go here. You can add detailed information about the article in this window."
         );
-        articleContent.setFont(new Font("Arial", Font.PLAIN, 16));
+        articleContent.setFont(new Font("Arial", Font.BOLD, 16));
         articleContent.setLineWrap(true);
         articleContent.setWrapStyleWord(true);
         articleContent.setEditable(false);
@@ -140,6 +170,9 @@ public class pet_articles extends JFrame {
         JScrollPane scrollPane = new JScrollPane(articleContent);
         articleFrame.add(scrollPane);
         articleFrame.setVisible(true);
+
+        // Add the window to the map
+        openArticles.put(articleTitle, articleFrame);
     }
 
     public static void main(String[] args) {

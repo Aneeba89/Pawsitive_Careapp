@@ -28,7 +28,7 @@ public class training_basics_article extends JFrame {
         articleText.setEditable(false);
         articleText.setLineWrap(true);
         articleText.setWrapStyleWord(true);
-        articleText.setFont(new Font("Serif", Font.PLAIN, 16));
+        articleText.setFont(new Font("Serif", Font.BOLD, 16));
         articleText.setForeground(Color.DARK_GRAY);
         articleText.setBackground(new Color(255, 255, 255)); // White background
         articleText.setText(
@@ -56,7 +56,7 @@ public class training_basics_article extends JFrame {
 
         // Add a back button
         JButton backButton = new JButton("Back");
-        backButton.setFont(new Font("Papyrus", Font.PLAIN, 16));
+        backButton.setFont(new Font("Papyrus", Font.BOLD, 16));
         backButton.setBackground(new Color(0, 0, 0)); // Black background
         backButton.setForeground(Color.WHITE);
         backButton.setFocusPainted(false);
